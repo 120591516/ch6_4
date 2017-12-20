@@ -3,7 +3,6 @@ package com.wisely.ch6_4;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @SpringBootApplication
 // 关闭特定的自动配置
@@ -15,7 +14,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  *	eg @ImportResource({ "classpath:some-context.xml", "classpath:some-context.xml" })
  */
 //@ImportResource({ "classpath:some-context.xml", "classpath:some-context.xml" })
-@ConfigurationProperties()
 public class Ch64Application {
 
 	public static void main(String[] args) {
