@@ -28,7 +28,7 @@ public class Ch64Application {
 	@Autowired
 	HelloService helloService;
 
-	@RequestMapping("/")
+	@RequestMapping("/index")
 	public String index() {
 		return helloService.sayHello();
 	}
