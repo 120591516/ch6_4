@@ -1,8 +1,13 @@
 package com.wisely.ch6_4;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.wisely.spring_boot_start_hello.HelloService;
 
 @SpringBootApplication
 // 关闭特定的自动配置
@@ -14,8 +19,19 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *	eg @ImportResource({ "classpath:some-context.xml", "classpath:some-context.xml" })
  */
 //@ImportResource({ "classpath:some-context.xml", "classpath:some-context.xml" })
+// @RestController
+/*
+ * @RestController 是一个组合注解，组合了@controller 和@ResponseBody
+ */
+@RestController
 public class Ch64Application {
+	@Autowired
+	HelloService helloService;
 
+	@RequestMapping("/")
+	public String index() {
+		return helloService.sayHello();
+	}
 	public static void main(String[] args) {
 		// 自定义启动方式
 		/**
