@@ -50,4 +50,36 @@ public class Ch64Application {
 		// spring 默认的启动方式
 		// SpringApplication.run(Ch64Application.class, args);
 	}
+
+	// 配置tomcat支持ssl
+	// @Bean
+	// public EmbeddedServletContainerFactory servletContainer() {
+	// TomcatEmbeddedServletContainerFactory tomcat = new
+	// TomcatEmbeddedServletContainerFactory() {
+	//
+	// @Override
+	// protected void postProcessContext(Context context) {
+	// SecurityConstraint securityConstraint = new SecurityConstraint();
+	// securityConstraint.setUserConstraint("CONFIDENTIAL");
+	// SecurityCollection securityCollection = new SecurityCollection();
+	// securityCollection.addPattern("/*");
+	// securityConstraint.addCollection(securityCollection);
+	// context.addConstraint(securityConstraint);
+	// }
+	//
+	// };
+	// tomcat.addAdditionalTomcatConnectors(httpConnector());
+	// return tomcat;
+	// }
+	//
+	// @Bean
+	// public Connector httpConnector() {
+	// Connector connector = new
+	// Connector("org.apache.coyote.http11.Http11AprProtocol");
+	// connector.setScheme("http");
+	// connector.setPort(8083);
+	// connector.setSecure(false);
+	// connector.setRedirectPort(8443);
+	// return connector;
+	// }
 }
